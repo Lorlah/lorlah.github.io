@@ -3,14 +3,14 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [My hosted website](#Hosted-Website)
 
 ## Instructions
 
-To get started, open `designs.js` and start building out the app's functionality.
+1. To get started, choose a grid size for the desired canvas.
+2. Select colors of your choice.
+3. You could click each singular box or drag the mouse across, whichever you regard as more efficient.
+4. Now let loose & create art!
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+##Hosted-Website
+My hosted website's link - https://lorlah.github.io/

@@ -30,15 +30,16 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    cursor:url(pencil-icon-flat.png);
     
 }
 
 tr {
-    height: 15px;
+    height: 10px;
 }
 
 td {
-    width: 15px;
+    width: 10px;
 }
 
 input[type=number] {
