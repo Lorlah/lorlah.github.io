@@ -1,0 +1,56 @@
+body {
+    text-align: center;
+    background-image: url(thumb-1920-659401.jpg)
+}
+
+
+h1 {
+    font-family:"28 Days Later";
+    font-size: 70px;
+    margin: 0.2em;
+}
+    
+
+h2 {
+    margin: 1em 0 0.25em;
+    font-family:"a bug's life - debugged", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+    background: white;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    
+}
+
+tr {
+    height: 15px;
+}
+
+td {
+    width: 15px;
+}
+
+input[type=number] {
+    width: 6em;
+    border-radius: 5px;
+    border: 2px solid #dadada;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+input[type=submit] {
+    width: 6em;
+    border-radius:5px;
+	background-color:#EBF4FC;
+	margin:3px;
+}
