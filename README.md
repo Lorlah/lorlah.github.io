@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Sample Art](#Sample Art)
+* [Sample Art](#Sample-Art)
 
 ## Instructions
 
@@ -15,4 +15,4 @@
 
 ## <a name="Sample-Art"></a>Sample Art
 Here's some sample art made with the project: <br/>
-![Project Sample](./Sample art.jpg)
+![Project Sample](./Sample art.png)
