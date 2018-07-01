@@ -15,4 +15,4 @@
 
 ## <a name="Sample-Art"></a>Sample Art
 Here's some sample art made with the project: <br/>
-![Project Sample](./Sample art.png)
+![Project Sample](./Sample.png)
