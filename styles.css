@@ -26,12 +26,10 @@ td {
     border: 1px solid black;
     background: white;
 }
-#pixelCanvas {
-    cursor:url(pencil.jpeg);            
-}
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    cursor:cell;                
 }
 
 tr {
