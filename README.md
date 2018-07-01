@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Sample Art](#Sample-Art)
+* [Sample Art](#Sample Art)
 
 ## Instructions
 
@@ -13,6 +13,6 @@
 4. You could click each singular box or drag the mouse across, whichever you regard as more efficient.
 5. Now let loose & create art!
 
-##<a name="Sample Art"></a>Sample Art
-Here's some sample art made with the project:
+## <a name="Sample-Art"></a>Sample Art
+Here's some sample art made with the project: <br/>
 ![Project Sample](./Sample art.jpg)
