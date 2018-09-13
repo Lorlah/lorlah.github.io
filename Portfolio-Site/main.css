@@ -1,0 +1,211 @@
+@charset "utf-8";
+html{
+	line-height: 1.15;
+}
+
+body {
+	background-image:url(cropped-web-development-background-8-1.jpg);
+	max-width: 100%;
+	background-size: cover;
+    background-repeat: no-repeat;
+	font-family:"28 Days Later";
+	color: #f2f0ec;
+	box-sizing: border-box;
+	display:block;
+}
+
+a {
+	text-decoration:none;
+	color: #fff;
+}
+
+a:hover {
+    color: #fcd088;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+	cursor:pointer;
+}
+
+/* Header Area */
+
+.top-header {
+	display: flex;
+	flex-flow:row nowrap;
+	margin: 0 auto;
+    justify-content: space-between;  
+	background: rgb(51,51,51, 0.5);
+    top: 0;
+    max-width: 100%;
+	max-height: 5%;
+    padding: 1% 1%;
+	position: sticky;
+}
+
+#header-title {
+    font-weight: 700;
+	padding-left: 35px;
+	font-size: 2.0em;
+}
+
+#header-title h3 {
+	color:#000;
+	font-size:0.6em;
+	font-family:cursive, fantasy, "Minion Pro Cond";
+}
+
+span {
+	border:7px solid #fcd088;
+	padding:0px 14px;
+	font-size:1.2em;
+	color:#000;
+		
+}
+
+/* Navigation Area */
+
+.site-navigation li {
+	display: inline-block;
+    text-align: -webkit-match-parent;
+}
+	
+.site-navigation-items {
+	list-style-type: none;
+	font-family: "Josefin Sans", sans-serif;
+   	position: absolute;
+    right: 30px;
+    top: 60px;
+    justify-content: space-between;
+}
+
+.site-navigation-items a {
+    font-size: 1.5em;
+    padding: 5px 30px;
+    color:white;
+    word-wrap: normal;
+}
+
+li a:hover {
+	border:7px solid #fcd088;
+	padding:0px 14px;
+    color: #fcd088;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+	cursor:pointer;
+	font-size: 1.8em;
+}
+
+/* Content Area */
+
+.content-heading {
+	font-weight: 700;
+	font-size: 2.0em;
+}
+ /* About Me Section */
+ 
+.about-me {
+		height:100%;
+		margin-top: 10%;
+		margin-left:10%;
+		margin-right:10%;
+		font-family: "Josefin Sans", sans-serif;
+}
+
+/* Featured Work Section */
+
+.featured-work {
+		height:100%;
+		margin-top: 10%;
+		margin-left:10%;
+		margin-right:10%;
+		font-family: "Josefin Sans", sans-serif;
+		font-weight:700;
+}
+
+.images:hover {
+	cursor:pointer;
+}
+
+.images {
+	display:flex;
+	flex-flow: row nowrap;
+	margin-top: 30px;
+}
+.featured-work-items img {
+	display:inline-block;
+	text-align: -webkit-match-parent;
+   	width: 80%;
+    justify-content: space-evenly;
+}
+
+ /* Resume Section */
+ 
+.resume {
+		height:100%;
+		margin-top: 10%;
+		margin-left:10%;
+		margin-right:10%;
+		font-family: "Josefin Sans", sans-serif;
+		font-weight:700;
+}
+
+/* Contact Details Section */
+
+.contact-details {
+		height:100%;
+		margin-top: 10%;
+		margin-left:10%;
+		margin-right:10%;
+		font-family: "Josefin Sans", sans-serif;
+		font-weight:700;
+}
+
+/* Socials Section */
+
+.socials {
+    list-style-type: none;
+    justify-content: space-evenly;
+	display:flex;
+	flex-flow: row nowrap;
+}
+
+.socials a {
+    color: #FFF;
+    margin: 10px;
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+} 
+
+.socials a li {
+	display: inline-block;
+    text-align: -webkit-match-parent;
+}
+
+.socials a:hover {
+    border:7px solid #fcd088;
+	padding:0px 14px;
+    color: #fcd088;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+	cursor:pointer;
+	font-size: 1.5em;} 
+
+
+ 
+   /* Footer Section */
+
+
+
+footer {
+	margin: 0 auto;
+    justify-content: space-between;  
+	background: rgb(51,51,51, 0.5);
+    top: 0;
+    max-width: 100%;
+	max-height: 5%;
+    padding: 1% 1%;
+}
+
+footer h2 {
+    vertical-align: middle;
+    text-align: center;
+} 
