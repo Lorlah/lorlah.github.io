@@ -4,7 +4,7 @@ html{
 }
 
 body {
-	background-image:url(cropped-web-development-background-8-1.jpg);
+	background-image:url(../pictures/cropped-web-development-background-8-1.jpg);
 	max-width: 100%;
 	background-size: cover;
     background-repeat: no-repeat;
@@ -30,9 +30,10 @@ a:hover {
 
 .top-header {
 	display: flex;
-	flex-flow:row nowrap;
+	flex-flow:row wrap;
 	margin: 0 auto;
-    justify-content: space-between;  
+	justify-content: space-between;  
+	align-items: center;
 	background: rgb(51,51,51, 0.5);
     top: 0;
     max-width: 100%;
@@ -71,7 +72,7 @@ span {
 .site-navigation-items {
 	list-style-type: none;
 	font-family: "Josefin Sans", sans-serif;
-   	position: absolute;
+   	/* position: absolute; */
     right: 30px;
     top: 60px;
     justify-content: space-between;

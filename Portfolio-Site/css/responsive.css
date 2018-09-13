@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@media screen and (max-width: 1250px) {
+    .site-navigation-items a {
+        font-size: 1.2em;
+    }
+
+    li a:hover {
+        font-size: 1.4em;
+    }
+}
