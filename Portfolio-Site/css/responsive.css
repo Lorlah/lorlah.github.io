@@ -111,13 +111,10 @@
     .socials a:hover {
         border:0;
         padding:0;
-        -webkit-transition: color 0.3s;
-        transition: color 0.3s;
-        cursor: pointer;
         font-size: 1.0em;
     } 
 
-    .socials a li {
+    .socials {
         padding: 10px;
     }
 }
