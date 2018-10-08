@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bank App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/responsive.css" />
+
+
+</head>
+
+<body>
+    <header class="top-header">
+
+        <!-- Header Area -->
+
+        <section id="header-title" class="header-title">
+            <img src="./Images/hamburger.png" class="menu-icon">
+            <h1><a href="">Dashboard</a></h1>
+        </section>
+
+    </header>
+
+    <div class="content">
+
+        <!-- Navigation Area -->
+
+        <nav class="site-navigation">
+            <ul class="site-navigation-items">
+                <li><img src="./Images/Side Menu/people.svg"> John Doe </li>
+                <li><a href="#dashboard"><img src="./Images/Side Menu/ic-dashboard.svg"> Dashboard </a></li>
+                <li><a href="#accounts"><img src="./Images/Side Menu/ic-accounts.svg"> Accounts </a></li>
+                <li><a href="#cards"><img src="./Images/Side Menu/ic-cards.svg"> Cards </a></li>
+                <li><a href="#payments"><img src="./Images/Side Menu/ic-payments.svg"> Payments</a></li>
+                <li><a href="#transfers"><img src="./Images/Side Menu/ic-transfers.svg"> Transfers </a></li>
+                <li><a href="#airtime"><img src="./Images/Side Menu/ic-airtime.svg"> Airtime </a></li>
+                <li><a href="#settings"><img src="./Images/Side Menu/ic-settings.svg"> Settings </a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Balance Area -->
+
+        <main>
+            <section class="balance-area">
+                <p> Balance </p>
+                <p> N 979153.36</p>
+                <p> 16.500 SP</p>
+                <div>
+                    <span class="circle active"> </span>
+                    <span class="circle inactive"> </span>
+                </div>
+            </section>
+
+            <section class="transactions">
+                <div id="transactions-heading">
+                    <p> Latest Transactions </p>
+                </div>
+
+                <div>
+                    <ul class="transaction-list">
+                        <li class="transaction-list-item">
+                            <p>
+                                <span class="bold"> ATM LAGOS </span> <br />
+                                <span class="light"> Today </span>
+                            </p>
+                            <p class="second-transaction-list-item">
+                                <span class="bold"> - N 450.00 <br /> </span>
+                                <span class="light"> Bank Withdraw </span>
+                            </p>
+                        </li>
+
+                        <li class="transaction-list-item">
+                            <p>
+                                <span class="bold"> ATM LAGOS </span> <br />
+                                <span class="light"> Yesterday </span>
+                            </p>
+                            <p class="second-transaction-list-item">
+                                <span class="bold"> + N 450.00 </span> <br />
+                                <span class="light"> Bank Withdraw </span>
+
+                            </p>
+                        </li>
+
+                        <li class="transaction-list-item">
+                            <p>
+                                <span class="bold"> 003 645 6548 65 <br /> </span>
+                                <span class="light"> 01/06/2015 </span>
+                            </p>
+                            <p class="second-transaction-list-item">
+                                <span class="bold"> - 100 SP <br /> </span>
+                                <span class="light"> Airtime Recharge </span>
+                            </p>
+                        </li>
+
+
+                        <li class="transaction-list-item">
+                            <p>
+                                <span class="bold"> John Doe <br /> </span>
+                                <span class="light"> 31/05/2015 </span>
+                            </p>
+                            <p class="second-transaction-list-item">
+                                <span class="bold"> + N 450.00 <br /> </span>
+                                <span class="light"> Transfer </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p> Copyright 2018 </p>
+    </footer>
+</body>
+<script src="./js/js.js"></script>
+
+</html>
