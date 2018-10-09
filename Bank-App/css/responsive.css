@@ -1,7 +1,6 @@
 @media screen and (max-width: 960px) {
    .content .site-navigation {
-        transform: translate(-2000px, 0);
-        transition: transform 1s ease-in;
+        transition: transform 1s ease-in-out;
         margin: 0;
         padding: 0;
         display: none;
@@ -9,10 +8,9 @@
 
 
     .site-navigation.open {
-        transform: translate(0, 0);
-        transition: transform 0.3s ease-in;
+        transition: transform 6s ease-in-out;
         display: block;
-        position: absolute;
+        /* position: absolute; */
 
     }
     
@@ -21,9 +19,10 @@
         width: 35%;
         }
 
-.content main {
-    width: 100%;
+    .content main {
+        width: 100%;
     }
+    
     
     .site-navigation-items li:nth-child(1) {
         height: 90px;
@@ -31,7 +30,7 @@
 }
 
 @media screen and (min-width:960px) {
-    .menu-icon {
+        .menu-icon {
         visibility: hidden;
     }
 }
@@ -42,7 +41,5 @@
         width: 90%;
     }
 
-    /* .top-header, .balance-area, .transactions, .transaction-list-item {
-    color: rgba(0, 0, 0, 0.5); */
+
     }
-}

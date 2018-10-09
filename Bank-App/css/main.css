@@ -1,17 +1,14 @@
 @font-face {
     font-family: "ProximaNovasoft-Regular";
-    src: local("ProximaNovasoft-Regular"),
-         url(../Fonts/Proxima\ Nova\ Soft/ProximaNovasoft-Regular.otf) format("opentype");
+   src: url(../Fonts/ProximaNovaSoft/ProximaNovasoft-Regular.otf) format("opentype");
 }
  @font-face {
     font-family: "ProximaNovasoft-Semibold";
-    src: local("ProximaNovasoft-Semibold"),
-        url(../Fonts/Proxima\ Nova\ Soft/ProximaNovasoft-Semibold.otf) format("opentype");
+    src: url(../Fonts/ProximaNovaSoft/ProximaNovasoft-Semibold.otf) format("opentype");
  }
 @font-face {
     font-family: "ProximaNovasoft-Medium";
-    src: local("ProximaNovasoft-Medium"),
-        url(../Fonts/Proxima\ Nova\ Soft/ProximaNovasoft-Medium.otf) format("opentype")
+    src: url(../Fonts/ProximaNovaSoft/ProximaNovasoft-Medium.otf) format("opentype")
 }
 
 
@@ -24,13 +21,9 @@ body {
 	box-sizing: border-box;
     display: block;
     margin: 0 auto;
-    padding: 0 1px;
+    padding: 0;
     width: 100%;
     min-height: 100vh;
-}
-
-html body {
-    min-height: 100vh;    
 }
 
 a {
@@ -80,16 +73,19 @@ a:hover {
 
 .content .site-navigation {
     width: 25%;
+    height: 100vh;
     background-color: #FFF;
 }
 
-.content main{
+.content main {
     width: 75%;
+    min-height: 100%;
+
 }
 .menu-icon {
     visibility: visible;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 /* Navigation Area */
@@ -217,6 +213,7 @@ a:hover {
     color: #959595;
     margin: 0;
     padding: 0;
+
 }
 
 .transaction-list-item {
@@ -224,11 +221,13 @@ a:hover {
     justify-content: space-between;
     line-height: 1.5;
     height: 65px;
+    padding: 0 15px;
 
 }
 
 .second-transaction-list-item {
     text-align: right;
+    padding: 0 15px;
 }
 
 .transaction-list-item .bold {
@@ -257,8 +256,13 @@ background: #FFF;
 }
 
 /* Footer  */
-
-
+footer {
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:[footer-height];
+}
 footer p {
     background-color: #8c59a3;
     padding: 10px 0;
