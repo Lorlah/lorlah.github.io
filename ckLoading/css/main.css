@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "ckFont";
+    src: url(../fonts/dinpro-bold.woff) format('woff');
+}
+
+body {
+font-family: "ckFont";
+font-weight: 900;
+font-size: 1.2rem;
+}
+
+#loading-page {
+    width: 100%;
+    height: 100%;
+    background: #1a1c23;
+    z-index: 200;
+    position: absolute;
+    color: #fff
+}
+
+#loading-page .loading-page-wrapper {
+    width: 70%;
+    max-width: 650px;
+    margin: -120px auto 0;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    bottom: 50%
+}
+
+#loading-page p,
+#loading-page h4,
+#loading-page h5  {
+    text-transform: uppercase;
+    color: #767f9d
+}
+#loading-page p span,
+#loading-page h4 span,
+#loading-page h5 span {
+    color: #d41343
+}
+
+#loading-page p {
+    color: #fff
+}
+
+#loading-page .text-mask {
+    background: #1a1c23;
+    position: relative;
+    z-index: 20;
+    min-height: 100px;
+}
+
+#loading-page .text-mask .shadow {
+    width: 130px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 -6px 6px -6px #000;
+    box-shadow: 0 -6px 6px -6px #000
+}
+
+#loading-page .text-mask .lagging {
+    display: none
+}
+
+#loading-page .bouncy-logo img {
+    position: relative;
+    -webkit-animation: loading-bounce-logo 1.5s infinite alternate;
+    animation: loading-bounce-logo 1.5s infinite alternate
+}
+
+@keyframes loading-bounce-logo {
+    from {
+        top: 90px;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out
+    }
+    to {
+        top: -30px;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out
+    }
+}
