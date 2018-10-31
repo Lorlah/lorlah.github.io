@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> ing Game </title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header-container">
+            <h1> aniMatch </h1>
+        </header>
+
+        <main>
+                <section class="score-panel">
+                <div> 
+                    Timer: <span class="timer"> 00:00 </span>
+                </div>
+                <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <div>
+                Moves: <span class="moves">0</span>
+                </div>
+                <div class="restart">
+                Restart <i class="fas fa-sync-alt"></i>
+                </div>
+            </section>
+            <section class="deck-container">
+                <ul class="deck">
+                    <li class="card">
+                        <i class="fas fa-dragon"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-dog"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-cat"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-horse"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-otter"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-cat"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-dove"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-hippo"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-dragon"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-frog"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-dove"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-frog"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-horse"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-hippo"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-dog"></i>
+                    </li>
+                    <li class="card">
+                        <i class="fas fa-otter"></i>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Modal -->
+
+            <section class="modal-background hide">
+                <div class="modal-body">
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"> &times; </span>
+                    </button>
+                    <div class="modal-content">
+                        <h1 class="modal-title"> Congratulations! <br> Here are your Stats: </h1>
+                    </div>
+                    <div class="modal-stats">
+                        <span class="modal-moves"> Total Moves: </span>
+                        <span class="modal-time"> Your Time: </span>
+                        <span class="modal-stars"> Stars Collected: </span>
+
+                    </div>
+                    <div class="modal-button">
+                        <button class="modal-replay"> 
+                            Replay <i class="fas fa-sync-alt"></i>
+                    </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
