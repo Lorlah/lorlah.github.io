@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 // Global Variables
 
 const parentDeck = document.querySelector('.deck');
-const cards = document.querySelectorAll('.card');
+const cardList = document.getElementsByClassName("card");
 let moveNo = 0;
 const moveFigure = document.querySelector('.moves');
 const stars = document.querySelectorAll(".stars li");
@@ -63,13 +63,14 @@ parentDeck.addEventListener('click', event => {
    startTimer()
     cardTarget = event.target;
     if ( suitable(cardTarget) ) {
-        cardToggle(cardTarget);
+        cardToggle(cardTarget); 
         addOpenedCard(cardTarget);
         if ( openedCards.length === 2 ) {
             checkMatch();
             logMove();
             starCount();
-            
+            cardsMatched()
+            displayModal();
         }
     }
 });
@@ -191,11 +192,15 @@ function stopTimer() {
 
 function cardsMatched() {
     let allCardsMatched = true;
-    for ( let i = 0; i < cards.length; i++) {
-        if (!cards[i].classList.contains('match')){
-            allCardsMatched = false;
-            break;
+    for ( let i = 0; i < cardList.length; i++ ) {
+        if (!cardList[i].classList.contains('match')){
+           allCardsMatched = false;
+           break;
         }
+        // }
+        // else {
+        //     allCardsMatched = false;
+        // }
     }
     return allCardsMatched;
 }
@@ -208,17 +213,18 @@ function displayStats() {
     
     }
 function displayModal() {
-    modal.classList.toggle('hide');
-}
     let gameOver = cardsMatched();
-            if (gameOver) {
-           
-            stopTimer();
-            displayStats();
-            displayModal();
-            }
+    console.log(gameOver);
+    if (gameOver===true) {
+    stopTimer();
+    modal.classList.toggle('hide');
+    displayStats();
+    }
+}
+
 
 // On clicking the restart button
+
 restart.addEventListener("click", function (event){
         console.log(event);
 

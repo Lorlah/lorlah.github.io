@@ -141,6 +141,6 @@ flex-direction: column;
     margin-top: 5%;
 } 
 
-.modal-background.hide {
+.hide {
     display: none;
 }
