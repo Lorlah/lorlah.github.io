@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function start() {
   });
 
   modalReplay.addEventListener("click", function(event) {
-    console.log(event);s
+    console.log(event);
     modal.classList.toggle("hide");
     window.location.reload();
   });

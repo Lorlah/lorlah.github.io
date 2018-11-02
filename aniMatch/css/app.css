@@ -1,3 +1,4 @@
+
 html {
     box-sizing: border-box;
 }
@@ -17,7 +18,7 @@ body {
 
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    font-family: 'Concert One', cursive;
     position: relative;
 }
 
@@ -34,9 +35,11 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    max-width: 38%;
+    font-size: 1.75rem;
 }
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Concert One', cursive;
     font-weight: 300;
 }
 
@@ -107,8 +110,9 @@ main {
     justify-content: space-evenly;
     width: 100%;
     margin-bottom: 10px;
-    /* padding-top: 2%; */
+    padding-bottom: 1.5%;
     align-items: center;
+    font-size: 1.5rem;
 }
 
 .score-panel .stars {
@@ -144,13 +148,14 @@ main {
 } 
 
 .modal-body {
-    top: 19%;
+    border: 18px solid rgba(5, 98, 126, 0.493);
+    top: 36%;
     left: 0%;
     position: relative;
     background: #fff;
     width: 100%;
     max-width: 500px;
-    min-height: 89.075vh;
+    height: 48%;
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
@@ -163,8 +168,9 @@ main {
     margin-bottom: 17%
 } 
  .modal-close {
-    border-radius: 6px;
-    top: -10px;
+    border-radius: 5px;
+    top: -22px;
+    left: -19px;
     position: relative;
  }
 
@@ -191,4 +197,11 @@ main {
 
 .hide {
     display: none;
+}
+
+
+@media screen and (max-width: 375px) {
+    .container {
+
+    }
 }
