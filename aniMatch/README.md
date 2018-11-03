@@ -22,7 +22,7 @@ This project was built with:
 - HTML
 - CSS
 - Vanilla JavaScript
-= Font-Awesome
+- Font-Awesome
 
 ## Author 
 - Salehu Omolola (2018).
