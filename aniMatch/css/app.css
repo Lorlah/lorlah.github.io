@@ -31,12 +31,12 @@ body {
 
 .header-container {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
-    max-width: 38%;
-    font-size: 1.75rem;
+    max-width: 68%;
+    font-size: 1.35rem;
 }
 h1 {
     font-family: 'Concert One', cursive;
