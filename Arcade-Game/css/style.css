@@ -1,19 +1,18 @@
 body {
     text-align: center;
+    font-family: 'Titan One', cursive;
 }
 .container {
-    /* max-width: 505px;
-    max-height: 700px;
-    height: 70%; */
-    margin-left: 1%;
+    padding: 3% 0% 0% 3%;
     width: 100%;
+    max-width: 30%;
     display: flex;
     flex-flow: column wrap;
-    position: fixed;
+    position: absolute;
 }
 
 .header-container {
-    margin: 0 0 1%;
+    padding: 0 0 15px;
     width: 100%;
     display: flex;
     justify-content: start;
@@ -22,7 +21,6 @@ body {
     font-size: 1.35rem;
 }
 h1 {
-    /* font-family: 'Concert One', cursive; */
     font-weight: 300;
 }
 
@@ -36,16 +34,17 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    /* align-items: center; */
     font-size: 1.5rem;
 }
 .timerFigure {
-    margin-bottom: 1%;
+    padding-bottom: 4%;
+    color: rgb(218, 34, 14);
 }
 .score-panel .stars {
     margin: 0;
     padding: 0;
-    display: inline-block;
+    display: flex;
+    flex-flow: column wrap;
     margin: 0 5px 0 0;
     display: inline;
     color: rgb(255, 217, 0);
@@ -70,7 +69,7 @@ h1 {
 } 
 
 .modal-body {
-    border: 18px solid rgba(5, 98, 126, 0.493);
+    border: 18px solid rgba(2, 61, 109, 0.801);
     top: 36%;
     left: 0%;
     position: relative;
@@ -87,7 +86,7 @@ h1 {
 .modal-content {
     text-align: center;
     margin-top: 5%;
-    margin-bottom: 17%
+    margin-bottom: 14%
 } 
  .modal-close {
     border-radius: 5px;
@@ -108,8 +107,11 @@ h1 {
 }
 
  .modal-replay {
-    margin-top: 4%;
+    margin-top: 2%;
     border-radius: 4px;
+    padding: 10px 30px;
+    font-family: 'Titan One', cursive;
+    background: rgba(2, 61, 109, 0.801);
  }
 
  .modal-button {

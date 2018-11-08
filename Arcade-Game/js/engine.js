@@ -37,7 +37,7 @@ var Engine = (function(global) {
     const replayButton = document.querySelector('.modal-button');
     const modalClose = document.querySelector('.modal-close');
     const starsArray = Array.prototype.slice.call(stars);    
-
+console.log(starsArray);
 
     canvas.width = 505;
     canvas.height = 606;
@@ -75,88 +75,85 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
 
-         // Timer Setup
+         
+        // Timer Setup
+        function timer() {
+          seconds += 1;
+          if (seconds === 60) {
+            minutes += 1;
+            seconds = 0;
+          }
 
-  function timer() {
-    seconds += 1;
-    if (seconds === 60) {
-      minutes += 1;
-      seconds = 0;
-    }
+          for (let x = 0; x < timeFigure.length; x++) {
+            timeFigure[x].innerText = minutes.addZero(2) + ":" + seconds.addZero(2);
+          }
+        }
 
-    for (let x = 0; x < timeFigure.length; x++) {
-      timeFigure[x].innerText = minutes.addZero(2) + ":" + seconds.addZero(2);
-    }
-  }
+        function startTimer() {
+          if (startedTimer) {
+            timeCount = setInterval(timer, 1500);
+            startedTimer = false;
+          }
+        }
 
-  function startTimer() {
-    if (startedTimer) {
-      timeCount = setInterval(timer, 1500);
-      startedTimer = false;
-    }
-  }
+        // Adds zeros to single numbers
 
-   // Adds zeros to single numbers
+        Number.prototype.addZero = function(figures) {
+          let singleNum = String(this);
+          while (singleNum.length < figures) {
+            singleNum = 0 + singleNum;
+          }
 
-   Number.prototype.addZero = function(figures) {
-    let singleNum = String(this);
-    while (singleNum.length < figures) {
-      singleNum = 0 + singleNum;
-    }
+          return singleNum;
+        };
 
-    return singleNum;
-  };
-
-  function stopTimer() {
-    clearInterval(timeCount);
-    return "Timer Stopped!";
-  }
-
-
-  function starCount() {
-    if ( (seconds === 40) ||  (seconds === 60)) {
-      reduceStar();
-    }
-  }
-
-  
-  function reduceStar() {
-    starsArray.splice(0, 1);
-    for (star of stars) {
-      if (star.style.display !== "none") {
-        star.style.display = "none";
-        break;
-      }
-    }
-  }
-
-  function displayStats() {
-    modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
-    modalStars.innerHTML = `Stars Collected:  ${starsArray.length}`;
-  }
-
-  function displayModal() {
-    if(player.won === true) {
-      stopTimer();
-    endModal.classList.toggle('hide');
-      displayStats();
-    }  
-  }
-
-  replayButton.addEventListener('click', () => {
-    //  endModal.classList.toggle('hide');
-    //  player.reset();
-    //  player.won = false;
-    //  win.requestAnimationFrame(main);
-    window.location.reload();
- });
- 
- modalClose.addEventListener('click', () => endModal.classList.toggle('hide'));
+        function stopTimer() {
+          clearInterval(timeCount);
+          return "Timer Stopped!";
+        }
 
 
+        function starCount() {
+          if ( (seconds === 10) ||  (seconds === 60)) {
+            reduceStar();
+          }
+        }
 
+        
+        function reduceStar() {
+          starsArray.splice(0, 1);
+          for (star of stars) {
+            console.log(star);
+            if (star.style.display !== "none") {
+              star.style.display = "none";
+              break;
+            }
+          }
+        }
 
+        function displayStats() {
+          modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
+          modalStars.innerHTML = `Stars Collected:  ${starsArray.length}`;
+        }
 
+        function displayModal() {
+          if(player.won === true) {
+            stopTimer();
+          endModal.classList.toggle('hide');
+            displayStats();
+          }  
+        }
+        // On clicking the Replay Button 
+        replayButton.addEventListener('click', () => {
+          window.location.reload();
+      });
+      
+      modalClose.addEventListener('click', () => {
+        endModal.classList.toggle('hide');
+      });
+      
+      // conditional that checks if the player suceeded
+      //take down record time & stop all game activities
         if(player.won === true) {
             stopTimer();
             win.cancelAnimationFrame(endGame);
