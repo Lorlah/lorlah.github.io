@@ -24,9 +24,20 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime,
         endGame;
+
+    const modalTime = document.querySelector(".modal-time");
+    let startedTimer = true;
+    let minutes = 0,
+      seconds = 0,
+      timeCount;
+    let timeFigure = document.getElementsByClassName("timer");
+    const stars = document.querySelectorAll(".stars li");
+    const modalStars = document.querySelector(".modal-stars");
     const endModal = document.querySelector('.modal-background');
     const replayButton = document.querySelector('.modal-button');
     const modalClose = document.querySelector('.modal-close');
+    const starsArray = Array.prototype.slice.call(stars);    
+
 
     canvas.width = 505;
     canvas.height = 606;
@@ -50,6 +61,10 @@ var Engine = (function(global) {
          */
         update(dt);
         render();
+        startTimer();
+        starCount();
+        displayModal();
+
 
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
@@ -60,23 +75,94 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
 
-         if(player.won === true) {
-             win.cancelAnimationFrame(endGame);
-             endModal.classList.toggle('hide');
-         }
-         else {
-             endGame = win.requestAnimationFrame(main);
-         }
+         // Timer Setup
 
-         replayButton.addEventListener('click', () => {
-            //  endModal.classList.toggle('hide');
-            //  player.reset();
-            //  player.won = false;
-            //  win.requestAnimationFrame(main);
-            window.location.reload();
-         });
-         
-         modalClose.addEventListener('click', () => endModal.classList.toggle('hide'));
+  function timer() {
+    seconds += 1;
+    if (seconds === 60) {
+      minutes += 1;
+      seconds = 0;
+    }
+
+    for (let x = 0; x < timeFigure.length; x++) {
+      timeFigure[x].innerText = minutes.addZero(2) + ":" + seconds.addZero(2);
+    }
+  }
+
+  function startTimer() {
+    if (startedTimer) {
+      timeCount = setInterval(timer, 1500);
+      startedTimer = false;
+    }
+  }
+
+   // Adds zeros to single numbers
+
+   Number.prototype.addZero = function(figures) {
+    let singleNum = String(this);
+    while (singleNum.length < figures) {
+      singleNum = 0 + singleNum;
+    }
+
+    return singleNum;
+  };
+
+  function stopTimer() {
+    clearInterval(timeCount);
+    return "Timer Stopped!";
+  }
+
+
+  function starCount() {
+    if ( (seconds === 40) ||  (seconds === 60)) {
+      reduceStar();
+    }
+  }
+
+  
+  function reduceStar() {
+    starsArray.splice(0, 1);
+    for (star of stars) {
+      if (star.style.display !== "none") {
+        star.style.display = "none";
+        break;
+      }
+    }
+  }
+
+  function displayStats() {
+    modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
+    modalStars.innerHTML = `Stars Collected:  ${starsArray.length}`;
+  }
+
+  function displayModal() {
+    if(player.won === true) {
+      stopTimer();
+    endModal.classList.toggle('hide');
+      displayStats();
+    }  
+  }
+
+  replayButton.addEventListener('click', () => {
+    //  endModal.classList.toggle('hide');
+    //  player.reset();
+    //  player.won = false;
+    //  win.requestAnimationFrame(main);
+    window.location.reload();
+ });
+ 
+ modalClose.addEventListener('click', () => endModal.classList.toggle('hide'));
+
+
+
+
+
+        if(player.won === true) {
+            stopTimer();
+            win.cancelAnimationFrame(endGame);
+        } else {
+            endGame = win.requestAnimationFrame(main);
+        }
     }
 
     /* This function does some initial setup that should only occur once,
@@ -100,7 +186,6 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the

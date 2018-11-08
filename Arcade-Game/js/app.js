@@ -1,3 +1,5 @@
+
+
 // Enemies our player must avoid
 var Enemy = function(x, y, rate) {
     // Variables applied to each of our instances go here,
@@ -162,8 +164,6 @@ const allEnemies = [];
 allEnemies.push(ladyBug1, ladyBug2, ladyBug3,ladyBug4,ladyBug5,ladyBug6);
 
 // Place the player object in a variable called player
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

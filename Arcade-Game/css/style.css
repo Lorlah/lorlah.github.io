@@ -1,6 +1,60 @@
 body {
     text-align: center;
 }
+.container {
+    /* max-width: 505px;
+    max-height: 700px;
+    height: 70%; */
+    margin-left: 1%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    position: fixed;
+}
+
+.header-container {
+    margin: 0 0 1%;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-content: start;
+    max-width: 68%;
+    font-size: 1.35rem;
+}
+h1 {
+    /* font-family: 'Concert One', cursive; */
+    font-weight: 300;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+ .score-panel {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    /* align-items: center; */
+    font-size: 1.5rem;
+}
+.timerFigure {
+    margin-bottom: 1%;
+}
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    display: inline;
+    color: rgb(255, 217, 0);
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
 
 .modal-background {
     top: 0;
@@ -41,6 +95,17 @@ body {
     left: -260px;
     position: relative;
  }
+
+ .modal-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-stats>span {
+   margin-bottom: 4%;
+}
 
  .modal-replay {
     margin-top: 4%;

@@ -10,6 +10,26 @@
     <link rel="icon" href="">
 </head>
 <body>
+    <div class="container">
+        <header class="header-container">
+            <h1> Frogger <i class="fas fa-frog"></i></h1>
+        </header>
+    
+        <section class="score-panel">
+            <div class="timerFigure"> 
+                Timer: <span class="timer"> 00:00 </span>
+            </div>
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
+        </section>
+    </div>
+
+
     <section class="modal-background hide">
             <div class="modal-body">
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
@@ -17,6 +37,10 @@
                 </button>
                 <div class="modal-content">
                     <h1 class="modal-title"> Congratulations! <br> You Won. </h1>
+                </div>
+                <div class="modal-stats">
+                        <span class="modal-time"> Your Time: </span>
+                        <span class="modal-stars"> Stars Collected: </span>
                 </div>
                 <div class="modal-button">
                     <button class="modal-replay"> 
