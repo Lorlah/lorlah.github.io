@@ -9,7 +9,7 @@
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
  *
- * This engine makes the canvas' context (ctx) object globally available to make 
+ * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
 
@@ -25,23 +25,31 @@ var Engine = (function(global) {
         lastTime,
         endGame;
 
-    const modalTime = document.querySelector(".modal-time");
+    const modalTime = document.querySelector('.modal-time');
     let startedTimer = true;
     let minutes = 0,
-      seconds = 0,
-      timeCount;
-    let timeFigure = document.getElementsByClassName("timer");
-    const stars = document.querySelectorAll(".stars li");
-    const modalStars = document.querySelector(".modal-stars");
+        seconds = 0,
+        timeCount;
+    let timeFigure = document.getElementsByClassName('timer');
+    const stars = document.querySelectorAll('.stars li');
+    const modalStars = document.querySelector('.modal-stars');
     const endModal = document.querySelector('.modal-background');
     const replayButton = document.querySelector('.modal-button');
     const modalClose = document.querySelector('.modal-close');
-    const starsArray = Array.prototype.slice.call(stars);    
-console.log(starsArray);
+    const starsArray = Array.prototype.slice.call(stars);
 
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+
+    // On clicking the Replay Button
+    replayButton.addEventListener('click', () => {
+        window.location.reload();
+    });
+
+    modalClose.addEventListener('click', () => {
+        endModal.classList.toggle('hide');
+    });
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -59,12 +67,8 @@ console.log(starsArray);
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
+        updateEntities(dt);
         render();
-        startTimer();
-        starCount();
-        displayModal();
-
 
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
@@ -75,90 +79,95 @@ console.log(starsArray);
          * function again as soon as the browser is able to draw another frame.
          */
 
-         
-        // Timer Setup
-        function timer() {
-          seconds += 1;
-          if (seconds === 60) {
-            minutes += 1;
-            seconds = 0;
-          }
-
-          for (let x = 0; x < timeFigure.length; x++) {
-            timeFigure[x].innerText = minutes.addZero(2) + ":" + seconds.addZero(2);
-          }
-        }
-
-        function startTimer() {
-          if (startedTimer) {
-            timeCount = setInterval(timer, 1500);
-            startedTimer = false;
-          }
-        }
-
-        // Adds zeros to single numbers
-
-        Number.prototype.addZero = function(figures) {
-          let singleNum = String(this);
-          while (singleNum.length < figures) {
-            singleNum = 0 + singleNum;
-          }
-
-          return singleNum;
-        };
-
-        function stopTimer() {
-          clearInterval(timeCount);
-          return "Timer Stopped!";
-        }
-
-
-        function starCount() {
-          if ( (seconds === 10) ||  (seconds === 60)) {
-            reduceStar();
-          }
-        }
-
-        
-        function reduceStar() {
-          starsArray.splice(0, 1);
-          for (star of stars) {
-            console.log(star);
-            if (star.style.display !== "none") {
-              star.style.display = "none";
-              break;
-            }
-          }
-        }
-
-        function displayStats() {
-          modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
-          modalStars.innerHTML = `Stars Collected:  ${starsArray.length}`;
-        }
-
-        function displayModal() {
-          if(player.won === true) {
-            stopTimer();
-          endModal.classList.toggle('hide');
-            displayStats();
-          }  
-        }
-        // On clicking the Replay Button 
-        replayButton.addEventListener('click', () => {
-          window.location.reload();
-      });
-      
-      modalClose.addEventListener('click', () => {
-        endModal.classList.toggle('hide');
-      });
-      
-      // conditional that checks if the player suceeded
-      //take down record time & stop all game activities
-        if(player.won === true) {
+        // conditional that checks if the player suceeded
+        //take down record time & stop all game activities
+        if (player.won === true) {
             stopTimer();
             win.cancelAnimationFrame(endGame);
+            displayModal();
         } else {
             endGame = win.requestAnimationFrame(main);
+        }
+    }
+
+    // Timer Setup
+    function timer() {
+        seconds += 1;
+
+        if ((seconds === 20) || (seconds === 40)) {
+            reduceStar();
+        }
+
+        if (seconds === 60) {
+            minutes += 1;
+            seconds = 0;
+            reduceStar();
+        }
+
+        for (let x = 0; x < timeFigure.length; x++) {
+            timeFigure[x].innerText =
+                minutes.addZero(2) + ':' + seconds.addZero(2);
+        }
+    }
+
+    function startTimer() {
+        if (startedTimer) {
+            timeCount = setInterval(timer, 1500);
+            startedTimer = false;
+        }
+    }
+
+    // // Adds zeros to single numbers
+
+    Number.prototype.addZero = function(figures) {
+        let singleNum = String(this);
+        while (singleNum.length < figures) {
+            singleNum = 0 + singleNum;
+        }
+
+        return singleNum;
+    };
+
+    function stopTimer() {
+        clearInterval(timeCount);
+        return 'Timer Stopped!';
+    }
+
+    // function starCount() {
+    //     if (seconds === 10 || seconds === 60) {
+    //         reduceStar();
+    //     }
+    // }
+
+    function reduceStar() {
+        // starsArray.splice(0, 1);
+        for (star of stars) {
+            if (star.style.display !== 'none') {
+                star.style.display = 'none';
+                break;
+            }
+
+            // stopTimer();
+            // win.cancelAnimationFrame(endGame);
+        }
+    }
+
+    function getStarsLength() {
+      const starsVisible = document.querySelectorAll('.stars li:not([style*="display:none"]):not([style*="display:none"])'
+      );
+      return starsVisible.length;
+    }
+
+    function displayStats() {
+        modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
+        modalStars.innerHTML = `Stars Collected:  ${getStarsLength()}`;
+    }
+
+    function displayModal() {
+        if (player.won === true) {
+            stopTimer();
+            endModal.classList.toggle('hide');
+            displayStats();
         }
     }
 
@@ -170,6 +179,8 @@ console.log(starsArray);
         reset();
         lastTime = Date.now();
         main();
+        startTimer();
+        // starCount();
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -181,9 +192,9 @@ console.log(starsArray);
      * functionality this way (you could just implement collision detection
      * on the entities themselves within your app.js file).
      */
-    function update(dt) {
-        updateEntities(dt);
-    }
+    // function update(dt) {
+    //     updateEntities(dt);
+    // }
 
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
@@ -210,19 +221,20 @@ console.log(starsArray);
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 3 of stone
+                'images/stone-block.png', // Row 2 of 3 of stone
+                'images/stone-block.png', // Row 3 of 3 of stone
+                'images/grass-block.png', // Row 1 of 2 of grass
+                'images/grass-block.png' // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
-            row, col;
-        
+            row,
+            col;
+
         // Before drawing, clear existing canvas
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -237,7 +249,11 @@ console.log(starsArray);
                  * so that we get the benefits of caching these images, since
                  * we're using them over and over.
                  */
-                ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                ctx.drawImage(
+                    Resources.get(rowImages[row]),
+                    col * 101,
+                    row * 83
+                );
             }
         }
 
