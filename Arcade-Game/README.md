@@ -1,4 +1,4 @@
-# Classic Arcade Game
+# Bugs
 Here's a remake of the popular arcade game _Frogger_ only, mine's called _Bugs_.:grin:.
 
 ### How To Play
