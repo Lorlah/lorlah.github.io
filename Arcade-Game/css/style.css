@@ -5,7 +5,7 @@ body {
 .container {
     padding: 3% 0% 0% 3%;
     width: 100%;
-    max-width: 30%;
+    max-width: 21%;
     display: flex;
     flex-flow: column wrap;
     position: absolute;
