@@ -1,6 +1,26 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game
+Here's a remake of the popular arcade game _Frogger_ only, mine's called _Bugs_.:grin:.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+### How To Play
+- The aim of this game is to get the player to the water, while also avoiding the enemy bugs.
+- Use the arrow keys to move the player left, right, up or down.
+- Colliding with an enemy bug resets your position.
+- The timer starts when the game does, and your star rating is dependent on how fast you can escape! :smirk:.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+### Sample
+Here's a sneak-peek of what the game looks like:
+![Project Sample](images/Bugs.png)
+
+## What You Need:
+- A browser with good internet connection.
+- You may click [here](https://lorlah.github.io/Arcade-Game/) to begin!.
+- Please note however, that the game starts immediately it loads.
+
+### Resources Implored
+- HTML
+- CSS
+- JavaScript
+- Font Awesome 
+
+### Author
+- Salehu Omolola (2018)

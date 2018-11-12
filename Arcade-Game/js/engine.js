@@ -36,7 +36,6 @@ var Engine = (function(global) {
     const endModal = document.querySelector('.modal-background');
     const replayButton = document.querySelector('.modal-button');
     const modalClose = document.querySelector('.modal-close');
-    const starsArray = Array.prototype.slice.call(stars);
 
     canvas.width = 505;
     canvas.height = 606;
@@ -147,17 +146,20 @@ var Engine = (function(global) {
                 break;
             }
 
-            // stopTimer();
-            // win.cancelAnimationFrame(endGame);
+            
         }
     }
-
+    // function to recall the amount of stars collected at the end of the game
     function getStarsLength() {
-      const starsVisible = document.querySelectorAll('.stars li:not([style*="display:none"]):not([style*="display:none"])'
-      );
-      return starsVisible.length;
+    let rest = 0;
+    stars.forEach(star => {
+        if (star.style.display !== 'none') {
+            rest++;
+        }
+        });
+        return rest;
     }
-
+    // function to display the modal statistics
     function displayStats() {
         modalTime.innerHTML = `Your Time:  ${timeFigure[0].innerText}`;
         modalStars.innerHTML = `Stars Collected:  ${getStarsLength()}`;
@@ -180,7 +182,7 @@ var Engine = (function(global) {
         lastTime = Date.now();
         main();
         startTimer();
-        // starCount();
+    
     }
 
     /* This function is called by main (our game loop) and itself calls all

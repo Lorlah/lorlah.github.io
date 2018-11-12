@@ -87,7 +87,7 @@ for (let enemy of allEnemies) {
         this.reset();
     }
     // console.log(this.y, enemy.y);
-    //Did the player win?
+
     //Did the player get to the final tile with coordinates?
     if(this.y === 0 ) {
         this.won = true;
