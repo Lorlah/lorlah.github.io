@@ -8,7 +8,7 @@ Testing is an important part of the development process and many organizations p
 Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
 
 ## How To Use
-- All you need do is click [here](https://lorlah.github.io/Feedreader)
+- All you need do is click [here](https://lorlah.github.io/Feedreader/index.html#)
 - And then afterwards, peruse the page by clciking on the various feeds put in place for your viewing pleasure.
 
 # Resources Used
