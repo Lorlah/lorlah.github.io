@@ -68,6 +68,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
   });
 }
 
+
 /**
  * Initialize leaflet map, called from HTML.
  */
@@ -209,4 +210,20 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+// Registering the service worker
+//conditional to check whether or not the browser supports service workers
+if('serviceWorker' in navigator) {
+  
+  window.addEventListener('load', () => {
+
+    navigator.serviceWorker
+  
+  // the register method
+  .register('/js/sw.js')
+
+  // catch possible errors
+  .catch(err => console.log(err))
+  })
+}
 
