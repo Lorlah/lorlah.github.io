@@ -220,7 +220,7 @@ if('serviceWorker' in navigator) {
     navigator.serviceWorker
   
   // the register method
-  .register('/js/sw.js')
+  .register('./js/sw.js')
 
   // catch possible errors
   .catch(err => console.log(err))
