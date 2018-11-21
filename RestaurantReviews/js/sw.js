@@ -1,7 +1,7 @@
 
 
 //Listening for an installation event
-let cacheName = 'v1';
+let cacheName = 'v2';
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
@@ -47,7 +47,7 @@ self.addEventListener('fetch', function(event) {
                     .then(function(response) {
                         const cloningResponse = response.clone();
                         // open the cache
-                        caches.open('v1').then(function(cache) {
+                        caches.open('v2').then(function(cache) {
 
                             // use the put method to pair the request with a response
                             cache.put(event.request, cloningResponse);
