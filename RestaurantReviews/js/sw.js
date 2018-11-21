@@ -6,7 +6,24 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                './'
+                '/RestaurantReviews/',
+                '/RestaurantReviews/data/restaurants.json',
+                '/RestaurantReviews/css/styles.css',
+                '/RestaurantReviews/img/1.jpg',
+                '/RestaurantReviews/img/2.jpg',
+                '/RestaurantReviews/img/3.jpg',
+                '/RestaurantReviews/img/4.jpg',
+                '/RestaurantReviews/img/5.jpg',
+                '/RestaurantReviews/img/6.jpg',
+                '/RestaurantReviews/img/7.jpg',
+                '/RestaurantReviews/img/8.jpg',
+                '/RestaurantReviews/img/9.jpg',
+                '/RestaurantReviews/img/10.jpg',
+                '/RestaurantReviews/js/dbhelper.js',
+                '/RestaurantReviews/js/main.js',
+                '/RestaurantReviews/js/restaurant_info.js',
+                '/RestaurantReviews/index.html',
+                '/RestaurantReviews/restaurant.html'
                 ]);
         })
     );
