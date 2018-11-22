@@ -1,65 +1,55 @@
+let staticCacheName = 'restaurant-static';
 
+self.addEventListener('install', (event)=> {
+  event.waitUntil(
+    caches.open(staticCacheName).then((cache)=> {
+      return cache.addAll([
+        '../',
+        '../data/restaurants.json',
+        '../css/styles.css',
+        '../img/1.jpg',
+        '../img/2.jpg',
+        '../img/3.jpg',
+        '../img/4.jpg',
+        '../img/5.jpg',
+        '../img/6.jpg',
+        '../img/7.jpg',
+        '../img/8.jpg',
+        '../img/9.jpg',
+        '../img/10.jpg',
+        '../js/dbhelper.js',
+        '../js/main.js',
+        '../js/restaurant_info.js',
+        '../index.html',
+        '../restaurant.html'
+      ]);
 
-//Listening for an installation event
-let cacheName = 'v2';
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(cacheName).then(function(cache) {
-            return cache.addAll([
-                '/RestaurantReviews/',
-                '/RestaurantReviews/data/restaurants.json',
-                '/RestaurantReviews/css/styles.css',
-                '/RestaurantReviews/img/1.jpg',
-                '/RestaurantReviews/img/2.jpg',
-                '/RestaurantReviews/img/3.jpg',
-                '/RestaurantReviews/img/4.jpg',
-                '/RestaurantReviews/img/5.jpg',
-                '/RestaurantReviews/img/6.jpg',
-                '/RestaurantReviews/img/7.jpg',
-                '/RestaurantReviews/img/8.jpg',
-                '/RestaurantReviews/img/9.jpg',
-                '/RestaurantReviews/img/10.jpg',
-                '/RestaurantReviews/js/dbhelper.js',
-                '/RestaurantReviews/js/main.js',
-                '/RestaurantReviews/js/restaurant_info.js',
-                '/RestaurantReviews/index.html',
-                '/RestaurantReviews/restaurant.html'
-                ]);
-        })
-    );
+      
+
+    })
+  );
 });
- 
-// listening for a fetch event
-self.addEventListener('fetch', function(event) {
-        event.respondWith(
 
-            // find out if the event request already exists within the cache
-            caches.match(event.request).then(function(response) {
-                if(response) {
-                    console.log('[ServiceWorker] found in cache', event.request.url);
-                return response;
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.filter((cacheName) => {
+          return cacheName.startsWith('restaurant-') &&
+                 cacheName != staticCacheName;
+        }).map((cacheName) => {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
 
-            } else {
-                // if request doesn't already exist, fetch normally
-                return fetch(event.request)
-
-                    // chaining the then method that takes the response from fetch
-                    .then(function(response) {
-                        const cloningResponse = response.clone();
-                        // open the cache
-                        caches.open('v2').then(function(cache) {
-
-                            // use the put method to pair the request with a response
-                            cache.put(event.request, cloningResponse);
-                        })
-                        return response;
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-                }
-            })
-        );
-})
-
-// const cacheFiles = 
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request, {ignoreSearch:true})
+    .then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});

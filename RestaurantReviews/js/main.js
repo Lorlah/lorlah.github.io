@@ -213,7 +213,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 } */
 
 // Registering the service worker
-//conditional to check whether or not the browser supports service workers
+// conditional to check whether or not the browser supports service workers
 if('serviceWorker' in navigator) {
   
   window.addEventListener('load', () => {
@@ -222,9 +222,8 @@ if('serviceWorker' in navigator) {
   
   // the register method
   .register('./js/sw.js')
-
   // catch possible errors
   .catch(err => console.log(err))
   })
-}
+};
 
