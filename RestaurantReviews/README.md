@@ -8,10 +8,10 @@
 - It functions on any device or screen size.
 
 ### Preview
-- Here's a preview of the expected features.
+- Here's a preview of the expected features: ![]()
 
 ### How To Use
-- Click to view the live version of the website.
+- Click [here](https://lorlah.github.io/RestaurantReviews/) to view the live version of the website.
 
 ### Resources Used
 - HTML
