@@ -8,7 +8,7 @@
 - It functions on any device or screen size.
 
 ### Preview
-- Here's a preview of the expected features: ![Project Preview](img/RestaurantReviews.png)
+- Here's a preview of the expected features: ![Project Preview](./img/RestaurantReviews.png)
 
 ### How To Use
 - Click [here](https://lorlah.github.io/RestaurantReviews/) to view the live version of the website.
